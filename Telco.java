@@ -21,6 +21,11 @@ public class Telco implements TelcoSubscription{
         return promoPrice.showPromoPrice(telcoName, promoPrice);
     }
 
+    @Override
+    public String accept(OtherNetworkOffer otherNetworkOffer, String telcoName) {
+        return otherNetworkOffer.showOtherNetworkOffer(telcoName, otherNetworkOffer);
+    }
+
     // getters and setters for the Telco fields
     public String getTelcoName() {
         return this.telcoName;

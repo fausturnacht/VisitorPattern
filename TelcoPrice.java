@@ -1,5 +1,7 @@
+﻿import java.util.HashMap;
+
 public class TelcoPrice implements PromoPrice {
-    private HashMap<String, Integer> telcoPromoPrice = new HashMap<>();
+    private static HashMap<String, Integer> telcoPromoPrice = new HashMap<>();
 
     static{
         telcoPromoPrice.put("Smart", 500);
@@ -8,7 +10,7 @@ public class TelcoPrice implements PromoPrice {
     }
 
     @Override
-    public String showPromoPrice(String telcoName, int promoPrice) {
-        return "The promo price for " + telcoName + " is: " + telcoPromoPrice.get(telcoName);
+    public String showPromoPrice(String telcoName, PromoPrice promoPrice) {
+        return "\u20B1" +telcoPromoPrice.get(telcoName);
     }
 }

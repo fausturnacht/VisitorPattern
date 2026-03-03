@@ -1,3 +1,3 @@
 public interface PromoPrice {
-    String showPromoPrice(String telcoName, int promoPrice);
+    String showPromoPrice(String telcoName, PromoPrice promoPrice);
 }

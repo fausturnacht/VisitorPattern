@@ -1,3 +1,3 @@
 public interface UsagePromo {
-    String showAllowance(String telcoName, int dataAllowance);
+    String showAllowance(String telcoName, UsagePromo usagePromo);
 }

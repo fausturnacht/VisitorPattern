@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TelcoPromo",
+            "request": "launch",
+            "mainClass": "TelcoPromo",
+            "projectName": "VisitorPattern_f91037ac"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "-Dfile.encoding=UTF-8"
+        }
+    ]
+}

@@ -1,24 +1,38 @@
+import javax.print.attribute.standard.MediaSize.Other;
+
 public class TelcoPromo {
     public static void main(String[] args) {
 
         UsagePromo promo = new TelcoAllowance();
-        UnliCallsTextOffer unli = new UnliCallTextPackage();
+        UnliCallsTextOffer unli = new TelcoUnliCallsTextOffer();
         PromoPrice price = new TelcoPrice();
+        OtherNetworkOffer network = new TelcoOtherNetworkOffer();
 
-        TelcoSubscription telco = new Telco("Smart");
-        
-        // System.out.println("Smart Data Usage Offer and price: " 
-        // + promo.showAllowance(smart.getTelcoName(), smart.getPromoPrice()));
-        // System.out.println("Globe Data Usage Offer and price" 
-        // + promo.showAllowance(globe.getTelcoName(), globe.getPromoPrice()));
-        // System.out.println("Ditto Data Usage Offer and price" 
-        // + promo.showAllowance(ditto.getTelcoName(), ditto.getPromoPrice()));
+        // exercise every supported telco name as well as an unsupported one
+        String[] telcoNames = {"Smart", "Globe", "Ditto"};
 
-        // System.out.println("\nSmart unlimited calls and text package: " 
-        // + unli.showUnliCallsTextOffer(smart.getTelcoName(), smart.getUnliCallText()));
-        // System.out.println("Globe unlimited calls and text package: " 
-        // + unli.showUnliCallsTextOffer(globe.getTelcoName(), globe.getUnliCallText()));
-        // System.out.println("Ditto unlimited calls and text package: " 
-        // + unli.showUnliCallsTextOffer(ditto.getTelcoName(), ditto.getUnliCallText()));
+        for (String name : telcoNames) {
+
+            Telco telco = new Telco(name);
+            System.out.println("===== " + name + " =====");
+
+            // data allowance visitor
+            System.out.println("Data allowance: " +
+                telco.accept(promo, telco.getTelcoName()));
+
+            // unlimited calls/text visitor
+            System.out.println("Unlimited calls/text: " +
+                telco.accept(unli, telco.getTelcoName()));
+
+            // promo price visitor
+            System.out.println("Promo price: " +
+                telco.accept(price, telco.getTelcoName()));
+
+            // other network offer visitor
+            System.out.println("Other networks: " +
+                telco.accept(network, telco.getTelcoName()));
+
+            System.out.println("\n");
+        }
     }
 }

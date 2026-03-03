@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public class TelcoAllowance implements UsagePromo{
-    private HashMap<String, Integer> telcoDataAllowance = new HashMap<>();
+    private static HashMap<String, Integer> telcoDataAllowance = new HashMap<>();
 
     static{
         telcoDataAllowance.put("Smart", 15);
@@ -10,7 +10,7 @@ public class TelcoAllowance implements UsagePromo{
     }
 
     @Override
-    public String showAllowance(String telcoName, int dataAllowance) {
-        return telcoName + " has " + telcoDataAllowance.get(telcoName) + "GB of data allowance.";
+    public String showAllowance(String telcoName, UsagePromo usagePromo) {
+        return telcoDataAllowance.get(telcoName) + "GB";
     }
 }
