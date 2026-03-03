@@ -6,8 +6,8 @@ Globe: Provides a data allowance of 10 GB for ₱450 per month. This plan comes 
 Ditto: Offers a data allowance of 8 GB for ₱400 per month. This plan includes unlimited calls and texts to all networks within the country.
 
 ### UML Diagram
-![Visitor Pattern UML Diagram](https://i.imgur.com/9n5sXoL.png)
+![Visitor Pattern UML Diagram](https://github.com/fausturnacht/VisitorPattern/blob/3a6e2746c246d5cbfe772211c5e394f19ccbf848/VisitorPattern-UML.png)
 
 ### Output
 
-![Visitor Pattern Java Output](https://i.imgur.com/9n5sXoL.png)
+![Visitor Pattern Java Output](https://github.com/fausturnacht/VisitorPattern/blob/3a6e2746c246d5cbfe772211c5e394f19ccbf848/Output-1.png)
